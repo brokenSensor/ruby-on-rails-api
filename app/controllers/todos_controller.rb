@@ -27,7 +27,7 @@ class TodosController < ApplicationController
       end
   
       def todo_params
-        params.require(:todo).permit(:text,:isCompleted)
+        params.require(:todo).permit(:text,:isCompleted, :project_id)
       end
   end
   
