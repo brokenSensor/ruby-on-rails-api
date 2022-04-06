@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
 
-    render json: @projects.includes(:todos)
+    render json: @projects.includes(:todos).order('id ASC')
   end
 
   # GET /projects/1

@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-    before_action :set_todo, only: %i[ update ]
+    before_action :set_todo, only: %i[ update destroy ]
   
     # POST /todos
     def create
@@ -20,6 +20,11 @@ class TodosController < ApplicationController
         render json: @todo.errors, status: :unprocessable_entity
       end
     end
+
+    # DELETE /projects/:project_id/todo/:id
+  def destroy
+    @todo.destroy
+  end
   
     private
       def set_todo
